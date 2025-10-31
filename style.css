@@ -1,0 +1,212 @@
+/* ---------- 기본 배경 및 전체 레이아웃 ---------- */
+body {
+  background-color: #f0f2f5; /* bg-gray-50 */
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.max-w-2xl {
+  max-width: 672px; /* Tailwind 2xl max-width */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+/* ---------- 헤더 / 상단 네비게이션 ---------- */
+.header {
+  background: linear-gradient(to right, #22c55e, #16a34a); /* from-green-500 to-green-600 */
+  color: white;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ---------- 검색창 ---------- */
+.search-container {
+  background-color: white;
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08); /* shadow */
+  padding: 1rem;
+  position: sticky;
+  top: 4rem; /* top-16 */
+  z-index: 10;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 0.75rem 0.75rem 2.5rem; /* pl-10 */
+  border-radius: 9999px; /* rounded-full */
+  border: 1px solid #d1d5db; /* gray-300 */
+  outline: none;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.search-input:focus {
+  box-shadow: 0 0 0 2px #22c55e; /* focus:ring-green-500 */
+  border-color: transparent;
+}
+
+/* 검색 아이콘 위치 */
+.search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.875rem;
+  color: #9ca3af; /* text-gray-400 */
+}
+
+/* ---------- 탭 버튼 ---------- */
+.tab-button {
+  flex: 1;
+  padding: 0.5rem 0;
+  text-align: center;
+  font-weight: 600;
+  border-bottom-width: 2px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.tab-active {
+  color: #16a34a; /* text-green-600 */
+  border-color: #16a34a; /* border-green-600 */
+}
+
+.tab-inactive {
+  color: #6b7280; /* text-gray-500 */
+  border-color: transparent;
+}
+
+.tab-inactive:hover {
+  color: #16a34a;
+}
+
+/* ---------- 카드 공통 ---------- */
+.card {
+  background-color: white;
+  border-radius: 0.5rem; /* rounded-lg */
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+}
+
+.gap-3 {
+  gap: 0.75rem;
+}
+
+/* ---------- 사용자 레벨 아이콘 ---------- */
+.level-icon {
+  width: 2.5rem; /* 10 */
+  height: 2.5rem;
+  border-radius: 9999px; /* rounded-full */
+  background-color: #bbf7d0; /* bg-green-100 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- 버튼 ---------- */
+.btn-primary {
+  padding: 0.25rem 0.75rem;
+  background-color: #16a34a; /* green-500 */
+  color: white;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #15803d; /* hover green-600 */
+}
+
+.btn-secondary {
+  padding: 0.25rem 0.75rem;
+  background-color: #f3f4f6; /* gray-100 */
+  color: #374151; /* gray-700 */
+  border-radius: 9999px;
+  font-size: 0.75rem;
+}
+
+/* ---------- 게시물 / 채팅 ---------- */
+.post-card, .chat-message {
+  padding: 0.75rem;
+  border-radius: 1rem; /* rounded-xl */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  max-width: 75%;
+}
+
+.chat-message.sent {
+  background-color: #16a34a; /* green-500 */
+  color: white;
+  border-bottom-right-radius: 0;
+}
+
+.chat-message.received {
+  background-color: white;
+  color: #111827;
+  border-top-left-radius: 0;
+}
+
+.chat-container {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  height: calc(100vh - 170px); /* 상단+입력창 높이 제외 */
+}
+
+/* ---------- 입력창 ---------- */
+.input-text {
+  flex-grow: 1;
+  padding: 0.75rem;
+  border-radius: 9999px;
+  border: 1px solid #d1d5db;
+  outline: none;
+}
+
+.input-text:focus {
+  box-shadow: 0 0 0 2px #22c55e;
+  border-color: transparent;
+}
+
+/* ---------- 하단 고정 네비게이션 ---------- */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border-top: 1px solid #e5e7eb;
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.05);
+  z-index: 20;
+}
+
+.bottom-nav .nav-button {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.75rem 0;
+  color: #6b7280; /* text-gray-400 */
+}
+
+.bottom-nav .nav-button.active {
+  color: #16a34a; /* active text-green-600 */
+}
